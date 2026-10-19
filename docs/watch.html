@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golf Companion for Garmin watches</title>
+<!-- The watch files and the model list (watch/watch.json) are written by
+     watch_app/publish-watch-app.ps1 in the app's own repo. -->
+<style>
+  :root {
+    --bg: #ffffff; --fg: #14211b; --muted: #5c6b63; --line: #d8deda; --panel: #f2f5f3;
+    --green: #0b3d2e; --on-green: #ffffff; --sand: #e4d5b7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #06291e; --fg: #f2f5f3; --muted: #c9bfa8; --line: #1e5142; --panel: #0b3d2e; --green: #e4d5b7; --on-green: #14211b; --sand: #3a3220; }
+  }
+  * { box-sizing: border-box; }
+  body { font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--fg); background: var(--bg); margin: 0; padding: 32px 20px 64px; }
+  main { max-width: 680px; margin: 0 auto; display: grid; gap: 28px; }
+  h1 { font-size: 32px; line-height: 1.15; letter-spacing: -0.5px; margin: 0; }
+  h2 { font-size: 21px; margin: 0 0 8px; }
+  p, ol, ul { margin: 0; }
+  ol, ul { padding-left: 22px; display: grid; gap: 6px; }
+  .muted { color: var(--muted); }
+  .step { display: grid; gap: 10px; }
+  .num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: var(--on-green); font-weight: 700; font-size: 15px; margin-right: 8px; }
+  input[type=search] { width: 100%; font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); }
+  .models { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .model { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-top: 1px solid var(--line); }
+  .model:first-child { border-top: 0; }
+  .model span { flex: 1; min-width: 0; }
+  .model a { background: var(--green); color: var(--on-green); text-decoration: none; padding: 6px 14px; border-radius: 6px; font-weight: 600; font-size: 15px; white-space: nowrap; }
+  .model a:focus-visible, input:focus-visible { outline: 3px solid #ff4a1c; outline-offset: 2px; }
+  .box { background: var(--panel); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 0.92em; background: var(--panel); padding: 1px 5px; border-radius: 4px; }
+  .box code { background: var(--bg); }
+  a { color: var(--green); }
+</style>
+</head>
+<body>
+<main>
+  <header style="display:grid; gap:10px">
+    <p class="muted">Golf Companion · watch app</p>
+    <h1>Put Golf Companion on your Garmin watch</h1>
+    <p class="muted">GPS distances to the green, hazards, a club for every shot and your scorecard, on your wrist. It takes about five minutes.</p>
+  </header>
+
+  <section class="box">
+    <h2>You'll need</h2>
+    <ul>
+      <li>The <b>Golf Companion phone app</b>. Ask Kino for the invite link.</li>
+      <li><b>Garmin Connect</b> on the same phone, with your watch paired to it.</li>
+      <li>A computer and your watch's <b>charging cable</b>.</li>
+    </ul>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">1</span>Download the file for your watch</h2>
+    <p class="muted">Your model is on the back of the watch, or on the watch under Settings → System → About. Each watch needs its own file, so pick the exact model.</p>
+    <input type="search" id="filter" placeholder="Search, e.g. Forerunner 55" aria-label="Search watch models">
+    <div class="models" id="models"><div class="model"><span class="muted">Loading the list of watches…</span></div></div>
+    <p class="muted" id="updated"></p>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">2</span>Copy it onto the watch</h2>
+    <p>Plug the watch into the computer with its charging cable. The file you downloaded is called <code>golf_app.prg</code>.</p>
+    <div class="box">
+      <b>Windows</b>
+      <ol>
+        <li>Open <b>File Explorer</b> and click <b>This PC</b>. Your watch shows up either as a drive called <b>GARMIN</b> or under its own name.</li>
+        <li>Open it, then <b>Internal Storage</b> if you see it, then the <b>GARMIN</b> folder, then <b>Apps</b>.</li>
+        <li>Drag <code>golf_app.prg</code> into <b>Apps</b>. If it asks, choose to replace the file that's there.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <b>Mac</b>
+      <ol>
+        <li>Older watches show up in Finder as a drive called <b>GARMIN</b>. Most newer ones don't. For those, install the free app <a href="https://openmtp.ganeshrvel.com/">OpenMTP</a> and open it with the watch plugged in.</li>
+        <li>Go into <b>GARMIN</b>, then <b>Apps</b>.</li>
+        <li>Drag <code>golf_app.prg</code> into <b>Apps</b>, replacing the old one if it asks.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">3</span>Unplug and play</h2>
+    <ol>
+      <li>Eject the watch (Windows: the eject icon in File Explorer; Mac: eject in Finder, or just close OpenMTP), then unplug it. The watch takes a moment to install the app.</li>
+      <li>On the watch, open the list of activities and apps (on most watches, press START or the top-right button) and choose <b>Golf Companion</b>.</li>
+      <li>Have your phone nearby with Garmin Connect running: your courses come from the Golf Companion phone app, nearest first.</li>
+    </ol>
+  </section>
+
+  <section class="box">
+    <h2>Updating</h2>
+    <p>When there's a new version, come back here and do steps 1 and 2 again. It replaces the old app, and your settings stay. Make sure any finished rounds have reached your phone first.</p>
+  </section>
+
+  <section class="step">
+    <h2>If something's not right</h2>
+    <ul>
+      <li><b>The app isn't on the watch:</b> check the file went straight into the <b>Apps</b> folder (not a folder inside it), and that you picked your exact model.</li>
+      <li><b>The watch shows an error when you open it:</b> it's almost always the file for a different model. Download yours again and replace it.</li>
+      <li><b>No courses on the watch:</b> open the Golf Companion phone app and add your course there, keep Garmin Connect running, then open the watch app again.</li>
+      <li>Still stuck? Ask Kino.</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  const list = document.getElementById("models");
+  const filter = document.getElementById("filter");
+  let models = [];
+
+  function render() {
+    const q = filter.value.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const shown = models.filter(m => plain(m.name).includes(q) || m.id.includes(q));
+    list.innerHTML = "";
+    if (shown.length === 0) {
+      list.innerHTML = '<div class="model"><span class="muted">No match. If your watch isn\'t listed, ask Kino whether it can be added.</span></div>';
+      return;
+    }
+    for (const m of shown) {
+      const row = document.createElement("div");
+      row.className = "model";
+      const name = document.createElement("span");
+      name.textContent = m.name;
+      const link = document.createElement("a");
+      link.href = "watch/" + encodeURIComponent(m.id) + "/golf_app.prg";
+      link.setAttribute("download", "golf_app.prg");
+      link.textContent = "Download";
+      link.setAttribute("aria-label", "Download for " + m.name);
+      row.append(name, link);
+      list.append(row);
+    }
+  }
+
+  // Search ignores accents and trademark signs, so "fenix" finds "fēnix®".
+  function plain(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[®™]/g, "");
+  }
+
+  fetch("watch/watch.json", { cache: "no-cache" })
+    .then(r => r.json())
+    .then(data => {
+      models = data.models || [];
+      if (data.updated) {
+        const d = new Date(data.updated + "T12:00:00");
+        document.getElementById("updated").textContent =
+          "Last updated " + d.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" }) + ".";
+      }
+      render();
+    })
+    .catch(() => {
+      list.innerHTML = '<div class="model"><span class="muted">The list of watches couldn\'t load. Refresh the page, or ask Kino.</span></div>';
+    });
+  filter.addEventListener("input", render);
+</script>
+</body>
+</html>

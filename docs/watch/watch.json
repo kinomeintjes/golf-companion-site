@@ -1,0 +1,167 @@
+{
+  "updated": "2026-10-19",
+  "models": [
+    {
+      "id": "epix2",
+      "name": "epix™ (Gen 2) / quatix® 7 Sapphire",
+      "family": "round-416x416",
+      "bytes": 66108
+    },
+    {
+      "id": "fenix7",
+      "name": "fēnix® 7 / quatix® 7",
+      "family": "round-260x260",
+      "bytes": 59324
+    },
+    {
+      "id": "fenix7s",
+      "name": "fēnix® 7S",
+      "family": "round-240x240",
+      "bytes": 59324
+    },
+    {
+      "id": "fenix7x",
+      "name": "fēnix® 7X / tactix® 7 / quatix® 7X Solar / Enduro™ 2",
+      "family": "round-280x280",
+      "bytes": 59324
+    },
+    {
+      "id": "fr165",
+      "name": "Forerunner® 165",
+      "family": "round-390x390",
+      "bytes": 63324
+    },
+    {
+      "id": "fr165m",
+      "name": "Forerunner® 165 Music",
+      "family": "round-390x390",
+      "bytes": 63324
+    },
+    {
+      "id": "fr255",
+      "name": "Forerunner® 255",
+      "family": "round-260x260",
+      "bytes": 58076
+    },
+    {
+      "id": "fr255m",
+      "name": "Forerunner® 255 Music",
+      "family": "round-260x260",
+      "bytes": 58076
+    },
+    {
+      "id": "fr255s",
+      "name": "Forerunner® 255s",
+      "family": "round-218x218",
+      "bytes": 58076
+    },
+    {
+      "id": "fr255sm",
+      "name": "Forerunner® 255s Music",
+      "family": "round-218x218",
+      "bytes": 58076
+    },
+    {
+      "id": "fr265",
+      "name": "Forerunner® 265",
+      "family": "round-416x416",
+      "bytes": 66108
+    },
+    {
+      "id": "fr265s",
+      "name": "Forerunner® 265s",
+      "family": "round-360x360",
+      "bytes": 66108
+    },
+    {
+      "id": "fr55",
+      "name": "Forerunner® 55",
+      "family": "round-208x208",
+      "bytes": 59564
+    },
+    {
+      "id": "fr57042mm",
+      "name": "Forerunner® 570 42mm",
+      "family": "round-390x390",
+      "bytes": 65340
+    },
+    {
+      "id": "fr57047mm",
+      "name": "Forerunner® 570 47mm",
+      "family": "round-454x454",
+      "bytes": 68828
+    },
+    {
+      "id": "fr955",
+      "name": "Forerunner® 955 / Solar",
+      "family": "round-260x260",
+      "bytes": 59324
+    },
+    {
+      "id": "fr965",
+      "name": "Forerunner® 965",
+      "family": "round-454x454",
+      "bytes": 68828
+    },
+    {
+      "id": "fr970",
+      "name": "Forerunner® 970",
+      "family": "round-454x454",
+      "bytes": 68828
+    },
+    {
+      "id": "venu2",
+      "name": "Venu® 2",
+      "family": "round-416x416",
+      "bytes": 69628
+    },
+    {
+      "id": "venu2plus",
+      "name": "Venu® 2 Plus",
+      "family": "round-416x416",
+      "bytes": 69628
+    },
+    {
+      "id": "venu2s",
+      "name": "Venu® 2S",
+      "family": "round-360x360",
+      "bytes": 66236
+    },
+    {
+      "id": "venu3",
+      "name": "Venu® 3",
+      "family": "round-454x454",
+      "bytes": 69628
+    },
+    {
+      "id": "venu3s",
+      "name": "Venu® 3S",
+      "family": "round-390x390",
+      "bytes": 69628
+    },
+    {
+      "id": "venu441mm",
+      "name": "Venu® 4 41mm",
+      "family": "round-390x390",
+      "bytes": 65340
+    },
+    {
+      "id": "venu445mm",
+      "name": "Venu® 4 45mm / D2™ Air X15",
+      "family": "round-454x454",
+      "bytes": 68828
+    },
+    {
+      "id": "vivoactive5",
+      "name": "vívoactive® 5",
+      "family": "round-390x390",
+      "bytes": 63772
+    },
+    {
+      "id": "vivoactive6",
+      "name": "vívoactive® 6",
+      "family": "round-390x390",
+      "bytes": 65340
+    }
+  ]
+}
